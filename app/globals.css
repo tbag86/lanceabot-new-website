@@ -17,13 +17,13 @@
 }
 
 :root {
-  --bg: #f5f5f4;
+  --bg: #f8f7f5;
   --paper: #ffffff;
-  --ink: #0f0f0f;
+  --ink: #1a1a1a;
   --muted: #636363;
-  --soft: #f1f1ef;
+  --soft: #f2f2f2;
   --line: rgba(0, 0, 0, 0.06);
-  --charcoal: #575557;
+  --charcoal: #0d0d0d;
   --radius: 8px;
 }
 
@@ -104,13 +104,13 @@ h1, h2, p { margin: 0; }
 }
 
 .is-scrolled .header-cta {
-  background: #575557;
+  background: #0d0d0d;
   color: #fff;
 }
 
 .soft-button {
   margin-top: 18px;
-  background: #999;
+  background: #1a1a1a;
   color: #fff;
 }
 
@@ -153,7 +153,7 @@ h1, h2, p { margin: 0; }
   position: relative;
   min-height: 100svh;
   overflow: hidden;
-  background: #343234;
+  background: #0d0d0d;
 }
 
 .hero-video {
@@ -163,13 +163,13 @@ h1, h2, p { margin: 0; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.72) saturate(0.82);
+  filter: brightness(0.74) saturate(1);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(70, 68, 70, 0.2), rgba(0, 0, 0, 0.04) 56%, rgba(0, 0, 0, 0.34));
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0.2), rgba(0, 0, 0, 0.02) 56%, rgba(0, 0, 0, 0.5));
 }
 
 .hero-content {
@@ -322,14 +322,14 @@ h1, h2, p { margin: 0; }
 .sector-card {
   overflow: hidden;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.72);
+  background: #fff;
 }
 
 .sector-card img {
   width: 100%;
   height: 252px;
   object-fit: cover;
-  opacity: 0.42;
+  opacity: 1;
 }
 
 .sector-card div {
@@ -398,7 +398,7 @@ h1, h2, p { margin: 0; }
   height: 10px;
   margin-right: 14px;
   border-radius: 999px;
-  background: #333;
+  background: #1a1a1a;
 }
 
 .approach-cards {
@@ -409,7 +409,7 @@ h1, h2, p { margin: 0; }
 .approach-cards article {
   padding: 20px 20px 28px;
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.76);
+  background: #fff;
 }
 
 .approach-cards img {
@@ -418,7 +418,7 @@ h1, h2, p { margin: 0; }
   margin-bottom: 28px;
   border-radius: 6px;
   object-fit: cover;
-  opacity: 0.44;
+  opacity: 1;
 }
 
 .approach-cards span {
@@ -434,13 +434,13 @@ h1, h2, p { margin: 0; }
   min-height: 440px;
   overflow: hidden;
   border-radius: var(--radius);
-  background: #ddd;
+  background: #f2f2f2;
 }
 
 .result-cards img {
   object-fit: cover;
-  opacity: 0.55;
-  filter: saturate(0.84);
+  opacity: 1;
+  filter: none;
 }
 
 .result-cards article::after {
@@ -540,7 +540,7 @@ footer {
   justify-content: space-between;
   gap: 20px;
   padding: 0 max(22px, calc((100vw - 1120px) / 2));
-  background: #3f3d3f;
+  background: #0d0d0d;
   color: #fff;
 }
 
