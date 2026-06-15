@@ -123,24 +123,36 @@ export default function Home() {
       </section>
 
       <section className="impact" id="impact">
-        <div className="logo-strip" aria-label="Core services">
-          {["AI Agents", "CRM", "Finance", "Marketing", "Voice", "Dashboards"].map((item) => <span key={item}>{item}</span>)}
+        <div className="partner-strip" aria-label="Lanceabot service areas">
+          <p>Workflows we agentify</p>
+          <div>
+            {["CRM", "Sales", "Finance", "Admin", "Marketing", "HR"].map((item) => <span key={item}>{item}</span>)}
+          </div>
         </div>
-        <div className="impact-copy">
-          <span className="eyebrow">Human-guarded AI</span>
-          <h1>Your agent handles the volume. Senior humans keep control.</h1>
-          <p>
-            Lanceabot designs, deploys and manages AI agents for UK businesses. Each service is strategised, developed,
-            trained, maintained and secured by our Manchester-based team, with guardrails and review paths built around
-            real business workflows.
-          </p>
-          <Image
-            className="impact-icon"
-            src={proofMark}
-            alt=""
-            width={40}
-            height={40}
-          />
+        <div className="impact-panel">
+          <div className="impact-quote">
+            <h2>
+              &quot;Your agent handles the volume. Senior human operators set the guardrails, review edge cases and keep performance accurate after launch.&quot;
+            </h2>
+            <div className="quote-meta">
+              <strong>Lanceabot</strong>
+              <span>Human-guarded AI for UK businesses</span>
+            </div>
+          </div>
+          <div className="impact-stats">
+            <article>
+              <span>Manchester</span>
+              <p>Based locally for strategy sessions with UK clients.</p>
+            </article>
+            <article>
+              <span>Human oversight</span>
+              <p>Strategised, developed, trained, maintained and secured by our team.</p>
+            </article>
+            <article>
+              <span>Real workflows</span>
+              <p>AI agents built to complete operational work, not just answer questions.</p>
+            </article>
+          </div>
         </div>
       </section>
 
