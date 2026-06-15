@@ -11,7 +11,6 @@ import {
   Landmark,
   Menu,
   Network,
-  ShieldCheck,
   Sparkles,
   X,
   type LucideIcon,
@@ -22,31 +21,40 @@ import { useEffect, useState } from "react";
 const heroPoster =
   "https://images.pexels.com/photos/32592652/pexels-photo-32592652.jpeg?auto=compress&cs=tinysrgb&w=1800";
 const heroVideo = "https://www.pexels.com/download/video/32331014/";
+const proofMark =
+  "https://framerusercontent.com/images/azNwucdErTEAVLQOfQPC5jIxfRQ.png?width=608&height=726";
 
 const services: Array<[string, string, string, LucideIcon]> = [
-  ["AI Agents & Agentic Chatbots", "Human-guarded agents that answer, triage, update systems and complete work without losing judgement or auditability.", "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=900", Bot],
-  ["CRM & Sales Automation", "Inbound leads scored, routed, followed up and booked into the right sales process with clear human checkpoints.", "https://images.pexels.com/photos/8867434/pexels-photo-8867434.jpeg?auto=compress&cs=tinysrgb&w=900", BriefcaseBusiness],
-  ["Finance & Admin Automation", "Back-office workflows for document handling, reconciliation, reporting and controlled task completion.", "https://images.pexels.com/photos/7567444/pexels-photo-7567444.jpeg?auto=compress&cs=tinysrgb&w=900", Landmark],
-  ["Digital Marketing Automation", "Campaign agents that research, draft, segment, report and improve marketing operations across channels.", "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=900", Sparkles],
-  ["AI Voice & Appointment Booking", "Voice, WhatsApp, SMS and email agents that qualify enquiries, book appointments and keep CRM records current.", "https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg?auto=compress&cs=tinysrgb&w=900", Headset],
-  ["Dashboards & Knowledge Bases", "Internal AI assistants, BI dashboards and searchable company knowledge that give staff faster answers.", "https://images.pexels.com/photos/7567529/pexels-photo-7567529.jpeg?auto=compress&cs=tinysrgb&w=900", BarChart3],
+  ["AI Agents & Agentic Chatbots", "Human-guarded agents that answer, triage, update systems and complete work without losing judgement or auditability.", "https://framerusercontent.com/images/QVBkxiid8ehzKaX0hl7J7NPCaU.jpg?width=1280&height=855", Bot],
+  ["CRM & Sales Automation", "Inbound leads scored, routed, followed up and booked into the right sales process with clear human checkpoints.", "https://framerusercontent.com/images/axG0epCQ9JWsiTA7pPGHXRkP9M.jpg?width=1280&height=853", BriefcaseBusiness],
+  ["Finance & Admin Automation", "Back-office workflows for document handling, reconciliation, reporting and controlled task completion.", "https://framerusercontent.com/images/noIctrfXM37L91OLw5oeuHWXIU.jpg?width=1280&height=721", Landmark],
+  ["Digital Marketing Automation", "Campaign agents that research, draft, segment, report and improve marketing operations across channels.", "https://framerusercontent.com/images/OJrHmFSJufC66vw2ts50yynFA.jpg?width=1280&height=853", Sparkles],
+  ["AI Voice & Appointment Booking", "Voice, WhatsApp, SMS and email agents that qualify enquiries, book appointments and keep CRM records current.", "https://framerusercontent.com/images/BH1CWEtxaVtqw0XMFUBkAjUBNxA.jpg?width=640&height=427", Headset],
+  ["Dashboards & Knowledge Bases", "Internal AI assistants, BI dashboards and searchable company knowledge that give staff faster answers.", "https://framerusercontent.com/images/kdHxkDJ63URfEZbSfBPksti5P7Y.jpg?width=1279&height=854", BarChart3],
 ];
 
 const approach: Array<[string, string, string]> = [
-  ["Strategise", "We map the workflow, risks, systems, data sources and business rules before a single automation is deployed.", "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"],
-  ["Build", "Our team develops the agent logic, integrations, prompts, tools, approval paths and evaluation checks around the real operation.", "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1600"],
-  ["Operate", "Senior human operators monitor performance, review edge cases, tune behaviour and keep the service accurate after launch.", "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Strategise", "We map the workflow, risks, systems, data sources and business rules before a single automation is deployed.", "https://framerusercontent.com/images/Z9BaEGtULXDSvmUhhRc4qvA6Q.jpg?width=1920&height=1280"],
+  ["Build", "Our team develops the agent logic, integrations, prompts, tools, approval paths and evaluation checks around the real operation.", "https://framerusercontent.com/images/hd9vgZTRwo1HooIBcnq4mdoFsRs.jpg?width=1920&height=1280"],
+  ["Operate", "Senior human operators monitor performance, review edge cases, tune behaviour and keep the service accurate after launch.", "https://framerusercontent.com/images/gc6oxVj75iAC0q1oMp12gy8CF4E.jpg?width=1920&height=1280"],
 ];
 
 const caseStudies: Array<[string, string, string]> = [
-  ["wilmot.ai", "Digital marketing agents", "Agent-led campaign support for research, content, reporting and marketing operations."],
-  ["towit.ai", "Vehicle transport platform", "AI-powered transport software with operational workflows and a driver location app."],
-  ["Cucumber CRM", "Lead booking automation", "Inbound lead agent that books assessor appointments and keeps CRM records up to date."],
-  ["Cucumber Recruitment", "Recruitment compliance agents", "CV parsing, candidate scoring, onboarding document checks and shift availability outreach."],
-  ["MCI Developments", "Land buying screening", "Land assessment tooling to help screen opportunities and support development decisions."],
-  ["Advice Debts", "WhatsApp sales agent", "Facebook lead follow-up, CRM updates, consent-led soft credit checks and solution guidance."],
-  ["Thermatic", "Solar lead generation", "Care-home lead discovery with filters and Google solar suitability checks."],
-  ["Life With A Van", "Multi-channel sales agent", "Email, WhatsApp and SMS follow-up that turns Facebook leads into customers."],
+  [
+    "https://framerusercontent.com/images/73BI8rX1oMVGDR8qlk5Z1TyIPU.jpg?width=1920&height=1280",
+    "CRM",
+    "Lead booking automation",
+  ],
+  [
+    "https://framerusercontent.com/images/noIctrfXM37L91OLw5oeuHWXIU.jpg?width=1280&height=721",
+    "Ops",
+    "Document checks",
+  ],
+  [
+    "https://framerusercontent.com/images/azNwucdErTEAVLQOfQPC5jIxfRQ.png?width=608&height=726",
+    "BI",
+    "Dashboards & insight",
+  ],
 ];
 
 const faqs = [
@@ -126,7 +134,13 @@ export default function Home() {
             trained, maintained and secured by our Manchester-based team, with guardrails and review paths built around
             real business workflows.
           </p>
-          <ShieldCheck className="impact-svg" size={42} strokeWidth={1.5} />
+          <Image
+            className="impact-icon"
+            src={proofMark}
+            alt=""
+            width={40}
+            height={40}
+          />
         </div>
       </section>
 
@@ -183,9 +197,15 @@ export default function Home() {
             <a className="soft-button" href="#contact">Discuss a project</a>
           </div>
         </div>
-        <div className="case-grid">
-          {caseStudies.map(([name, label, copy]) => (
-            <article key={name}><span>{label}</span><h2>{name}</h2><p>{copy}</p></article>
+        <div className="result-cards">
+          {caseStudies.map(([image, value, label]) => (
+            <article key={label}>
+              <Image src={image} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" />
+              <div>
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </div>
+            </article>
           ))}
         </div>
       </section>
