@@ -16,7 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { type CSSProperties, useEffect, useState } from "react";
 
 const heroPoster =
   "https://images.pexels.com/photos/32592652/pexels-photo-32592652.jpeg?auto=compress&cs=tinysrgb&w=1800";
@@ -34,9 +34,9 @@ const services: Array<[string, string, string, LucideIcon]> = [
 ];
 
 const approach: Array<[string, string, string]> = [
-  ["Strategise", "We map the workflow, risks, systems, data sources and business rules before a single automation is deployed.", "https://framerusercontent.com/images/Z9BaEGtULXDSvmUhhRc4qvA6Q.jpg?width=1920&height=1280"],
-  ["Build", "Our team develops the agent logic, integrations, prompts, tools, approval paths and evaluation checks around the real operation.", "https://framerusercontent.com/images/hd9vgZTRwo1HooIBcnq4mdoFsRs.jpg?width=1920&height=1280"],
-  ["Operate", "Senior human operators monitor performance, review edge cases, tune behaviour and keep the service accurate after launch.", "https://framerusercontent.com/images/gc6oxVj75iAC0q1oMp12gy8CF4E.jpg?width=1920&height=1280"],
+  ["Strategise", "We map the workflow, risks, systems, data sources and business rules before a single automation is deployed.", "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Build", "Our team develops the agent logic, integrations, prompts, tools, approval paths and evaluation checks around the real operation.", "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1600"],
+  ["Operate", "Senior human operators monitor performance, review edge cases, tune behaviour and keep the service accurate after launch.", "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1600"],
 ];
 
 const caseStudies: Array<[string, string, string]> = [
@@ -192,10 +192,16 @@ export default function Home() {
           <ul><li>Strategise</li><li>Build</li><li>Operate</li></ul>
         </aside>
         <div className="approach-cards">
-          {approach.map(([title, copy, image]) => (
-            <article key={title}>
-              <Image src={image} alt="" width={760} height={506} />
-              <span>{title}</span><h2>{title}</h2><p>{copy}</p>
+          {approach.map(([title, copy, image], index) => (
+            <article key={title} className="approach-step" style={{ "--step": index } as CSSProperties}>
+              <div className="approach-image">
+                <Image src={image} alt="" fill sizes="(max-width: 900px) 100vw, 54vw" />
+              </div>
+              <div className="approach-copy">
+                <span>{String(index + 1).padStart(2, "0")} / {title}</span>
+                <h2>{title}</h2>
+                <p>{copy}</p>
+              </div>
             </article>
           ))}
         </div>
